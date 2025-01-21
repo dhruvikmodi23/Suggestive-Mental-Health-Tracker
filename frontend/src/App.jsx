@@ -4,8 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-import Questionnaire from "./pages/Questionnaire";
-import Form1 from "./pages/Forme";
+import Question from "./pages/Question";
 
 const App = () => {
   return (
@@ -16,8 +15,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/questionnaire" element={<Questionnaire />} />
-          <Route path="/form" element={<Form1 />} />
+          <Route path="/question" element={<Question />} />
+
 
         </Routes>
       </div>
