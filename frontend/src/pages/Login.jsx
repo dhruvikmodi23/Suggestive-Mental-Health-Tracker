@@ -31,15 +31,15 @@ const Login = () => {
     };
 
     return (
-        <div className="flex w-96 justify-center items-center min-h-screen bg-gray-100">
+        <div className="flex w-full justify-center items-center min-h-screen  ">
             <form
                 onSubmit={handleSubmit}
-                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md"
+                className="bg-transparent shadow-md  bg-inherit rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md rounded-3xl"
             >
-                <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+                <h2 className="text-2xl text-black font-bold mb-4 text-center">Login</h2>
                 {error && <p className="text-red-500">{error}</p>}
                 <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                    <label className="block text-gray-400 text-sm font-bold mb-2" htmlFor="email">
                         Email
                     </label>
                     <input
@@ -53,7 +53,7 @@ const Login = () => {
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                    <label className="block text-gray-400 text-sm font-bold mb-2" htmlFor="password">
                         Password
                     </label>
                     <input
