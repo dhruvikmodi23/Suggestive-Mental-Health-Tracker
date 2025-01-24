@@ -13,8 +13,16 @@ const questionSchema = new mongoose.Schema({
     required: true, 
     enum: ['single-choice', 'multi-choice', 'text', 'rating'] 
   },
-  options: [optionSchema],
+  options: {
+    type: [optionSchema],
+    validate: {
+      validator: function (v) {
+        return Array.isArray(v) && v.length > 0;
+      },
+      message: 'Options must contain at least one option'
+    }
+  },
   required: { type: Boolean, default: true }
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('Question', questionSchema);
