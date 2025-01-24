@@ -3,7 +3,7 @@ const { firstQuestion, nextQuestion } = require('../controllers/questionControll
 const {addQuestion} = require('../controllers/addQuestionController');
 const router = express.Router();
 
-router.post('/start', firstQuestion);
+router.get('/start', firstQuestion);
 router.post('/next', nextQuestion);
 router.post('/add',addQuestion)
 

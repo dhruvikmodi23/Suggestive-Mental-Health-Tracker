@@ -1,15 +1,21 @@
-const express = require('express');
+
 
 const Question = require("../models/questionModel");
 
 // Get the first question
 exports.firstQuestion = async (req, res) => {
   try {
+    console.log("inside controller");
     const firstQuestion = await Question.findOne({ questionId: 'q1' }); // Replace 'q1' with your starting question ID
-    if (!firstQuestion) return res.status(404).json({ error: 'No questions found.' });
+    if (!firstQuestion) {
+      console.error('No questions found in the database.');
+      return res.status(404).json({ error: 'No questions found in the database.' });
+    }
+    res.status(200)
     res.json(firstQuestion);
   } catch (error) {
-    res.status(500).json({ error: 'Server error' });
+    console.error('Error fetching the first question:', error.message);
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 

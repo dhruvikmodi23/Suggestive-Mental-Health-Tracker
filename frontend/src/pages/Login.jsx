@@ -24,7 +24,7 @@ const Login = () => {
         try {
             const response = await axios.post("http://localhost:5000/api/auth/login", formData);
             alert("Login successful!");
-            navigate("/questionnaire");
+            navigate("/question");
         } catch (err) {
             setError(err.response?.data?.message || "Invalid email or password.");
         }
